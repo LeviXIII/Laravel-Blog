@@ -24,7 +24,11 @@
     </div>
 
     <main role="main" class="container">
-      @yield('content')
+      <div class="row">
+        @yield('content')
+        @include('layouts/sidebar')
+      </div>
+      
     </main><!-- /.container -->
 
     <footer class="blog-footer">
