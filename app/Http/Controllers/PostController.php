@@ -9,13 +9,16 @@ class PostController extends Controller
 {
     public function index() {
 
-        $posts = Post::all();
+        $posts = Post::latest()->get();
 
         return view('posts/index', compact('posts'));
     }
 
-    public function show() {
-        return view('posts/show');
+    //The "Post $post" is taking the wildcard var. name and injecting
+    //it for the function to use. ie. $post = the post id 1, 2, etc.
+    public function show(Post $post) {
+
+        return view('posts/show', compact('post'));
     }
 
     public function create() {
