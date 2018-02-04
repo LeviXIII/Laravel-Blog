@@ -20,6 +20,25 @@
         @endforeach
       </ul>
     </section>
+
+    {{-- Add a comment --}}
+    <section class="card">
+      <section class="card-block">
+        <form method="POST" action="/posts/{{ $post->id }}/comments">
+          {{ csrf_field() }}
+          
+          <section class="form-group">
+            <textarea name="body" placeholder="Write your comment here." class="form-control" required></textarea>
+          </section>
+
+          <section class="form-group">
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+          </section>
+        </form>
+
+        @include('layouts/errors')
+      </section>
+    </section>
   </section>
 
 @endsection
