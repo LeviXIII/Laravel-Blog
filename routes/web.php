@@ -11,11 +11,7 @@
 |
 */
 
-App::bind('App\Billing\Stripe', function() {
-  return new \App\Billing\Stripe(config('services.stripe.secret'));
-});
-
-$stripe = resolve('App\Billing\Stripe');
+dd(resolve('App\Billing\Stripe'));
 
 Route::get('/', 'PostController@index')->name('home');
 
