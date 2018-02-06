@@ -13,11 +13,10 @@ class PostController extends Controller
     }
 
     public function index(Posts $posts) {
-        dd($posts);
-        $posts = $posts->all();
-        // $posts = Post::latest()
-        //     ->filter(request(['month', 'year']))
-        //     ->get();
+        // $posts = $posts->all();
+        $posts = Post::latest()
+            ->filter(request(['month', 'year']))
+            ->get();
         
         return view('posts/index', compact('posts'));
     }
