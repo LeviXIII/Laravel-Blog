@@ -19,7 +19,7 @@ Route::get('/posts/{post}', 'PostController@show');
 
 Route::get('/register', 'RegistrationController@create');
 
-Route::get('/login', 'SessionController@create');
+Route::get('/login', 'SessionController@create')->name('login');
 
 
 Route::post('/posts', 'PostController@store');
@@ -31,4 +31,3 @@ Route::post('/register', 'RegistrationController@store');
 Route::post('/login', 'SessionController@store');
 
 Route::get('/logout', 'SessionController@destroy');
-
