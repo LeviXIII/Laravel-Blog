@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-//use Carbon\Carbon;
+use App\Repositories\Posts;
+//use Carbon\Carbon; //Not currently using.
 
 class PostController extends Controller
 {
@@ -11,11 +12,12 @@ class PostController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
-    public function index() {
-
-        $posts = Post::latest()
-            ->filter(request(['month', 'year']))
-            ->get();
+    public function index(Posts $posts) {
+        dd($posts);
+        $posts = $posts->all();
+        // $posts = Post::latest()
+        //     ->filter(request(['month', 'year']))
+        //     ->get();
         
         return view('posts/index', compact('posts'));
     }
