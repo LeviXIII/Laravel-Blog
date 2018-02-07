@@ -23,6 +23,12 @@
       @include('layouts/nav')
     </div>
 
+    @if ($flash = session('message'))
+    <section id="flash-message" class="alert alert-success" role="alert">
+      {{ $flash }}
+    </section>
+    @endif
+
     <main role="main" class="container">
       <div class="row">
         @yield('content')

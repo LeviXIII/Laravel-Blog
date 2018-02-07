@@ -33,6 +33,13 @@ h6 {
   }
 }
 
+#flash-message {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
 .nav-scroller {
   position: relative;
   z-index: 2;
