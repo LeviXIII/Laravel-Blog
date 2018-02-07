@@ -23,6 +23,9 @@ Route::get('/register', 'RegistrationController@create');
 
 Route::get('/login', 'SessionController@create')->name('login');
 
+Route::get('/logout', 'SessionController@destroy');
+
+Route::get('/posts/tags/{tag}', 'TagController@index');
 
 Route::post('/posts', 'PostController@store');
 
@@ -32,4 +35,4 @@ Route::post('/register', 'RegistrationController@store');
 
 Route::post('/login', 'SessionController@store');
 
-Route::get('/logout', 'SessionController@destroy');
+
